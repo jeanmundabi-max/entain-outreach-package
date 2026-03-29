@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Prep — Entain plc — Strategy Manager, Performance Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAFAF9;
+  --card-bg: #FFFFFF;
+  --card-border: #E7E5E4;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+  --card-shadow-expanded: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+  --text: #1C1917;
+  --text-secondary: #57534E;
+  --text-muted: #A8A29E;
+  --accent: #D97706;
+  --accent-light: #FFFBEB;
+  --emerald: #059669;
+  --emerald-light: #ECFDF5;
+  --orange: #EA580C;
+  --orange-light: #FFF7ED;
+  --red: #DC2626;
+  --red-light: #FEF2F2;
+  --blue: #2563EB;
+  --sidebar-bg: #FFFFFF;
+  --sidebar-width: 240px;
+  --border: #E7E5E4;
+  --hover-bg: #F5F5F4;
+  --stone-50: #FAFAF9;
+  --stone-100: #F5F5F4;
+  --stone-200: #E7E5E4;
+  --stone-300: #D6D3D1;
+  --stone-700: #44403C;
+  --stone-900: #1C1917;
+}
+
+.dark-mode {
+  --bg: #1C1917;
+  --card-bg: #292524;
+  --card-border: #44403C;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.14);
+  --card-shadow-expanded: 0 4px 12px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
+  --text: #E7E5E4;
+  --text-secondary: #A8A29E;
+  --text-muted: #78716C;
+  --sidebar-bg: #292524;
+  --border: #44403C;
+  --hover-bg: #44403C;
+  --stone-50: #292524;
+  --stone-100: #44403C;
+  --stone-200: #57534E;
+  --stone-700: #D6D3D1;
+  --stone-900: #FAFAF9;
+  --accent-light: rgba(217,119,6,0.12);
+  --emerald-light: rgba(5,150,105,0.12);
+  --orange-light: rgba(234,88,12,0.12);
+  --red-light: rgba(220,38,38,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+  transition: background 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  z-index: 100;
+  padding: 0;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--stone-300); border-radius: 2px; }
+
+.sidebar-header {
+  padding: 20px 16px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.sidebar-header h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 2px;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-header p {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.sidebar-progress {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 3px;
+  background: var(--stone-100);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+.progress-text {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.sidebar-search {
+  padding: 12px 12px 8px;
+  flex-shrink: 0;
+}
+
+.sidebar-search input {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 12px;
+  font-family: 'Inter', system-ui, sans-serif;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.sidebar-search input::placeholder { color: var(--text-muted); }
+.sidebar-search input:focus { border-color: var(--accent); }
+
+.sidebar-actions {
+  padding: 4px 12px 8px;
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.sidebar-actions button {
+  flex: 1;
+  padding: 5px 6px;
+  font-size: 11px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--card-bg);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.sidebar-actions button:hover {
+  background: var(--hover-bg);
+  color: var(--text);
+}
+
+.nav-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.nav-group {
+  margin-bottom: 2px;
+}
+
+.nav-group-title {
+  padding: 10px 16px 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.nav-group-title:hover { color: var(--text-secondary); }
+
+.nav-group-title .chevron {
+  font-size: 8px;
+  transition: transform 0.2s;
+  color: var(--text-muted);
+}
+
+.nav-group.collapsed .chevron { transform: rotate(-90deg); }
+.nav-group.collapsed .nav-items { display: none; }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px 4px 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.12s;
+  gap: 7px;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+}
+
+.nav-item:hover {
+  color: var(--text-secondary);
+  background: var(--hover-bg);
+}
+
+.nav-item.active {
+  color: var(--accent);
+  background: var(--accent-light);
+  border-left-color: var(--accent);
+}
+
+.nav-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--stone-300);
+  flex-shrink: 0;
+}
+
+.nav-item.active .nav-dot { background: var(--accent); }
+.nav-item.type-blue .nav-dot { background: var(--blue); }
+.nav-item.type-emerald .nav-dot { background: var(--emerald); }
+.nav-item.type-amber .nav-dot { background: var(--accent); }
+.nav-item.type-red .nav-dot { background: var(--red); }
+
+.nav-checkbox {
+  width: 13px; height: 13px;
+  border-radius: 3px;
+  border: 1.5px solid var(--stone-300);
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  font-size: 8px;
+  color: transparent;
+}
+
+.nav-checkbox.checked {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.nav-label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+/* ====== MAIN CONTENT ====== */
+.main {
+  margin-left: var(--sidebar-width);
+  padding: 48px 48px 80px;
+  min-height: 100vh;
+}
+
+.content-area {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 40px;
+}
+
+.page-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.page-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ====== CARDS ====== */
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: var(--card-shadow);
+  border-left: 3px solid var(--card-border);
+}
+
+.card.type-blue { border-left-color: var(--blue); }
+.card.type-emerald { border-left-color: var(--emerald); }
+.card.type-amber { border-left-color: var(--accent); }
+.card.type-red { border-left-color: var(--red); }
+.card.type-slate { border-left-color: var(--stone-300); }
+
+.card.expanded {
+  box-shadow: var(--card-shadow-expanded);
+}
+
+.card-header {
+  padding: 14px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: background 0.12s;
+}
+
+.card-header:hover { background: var(--hover-bg); }
+
+.card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.card-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  min-width: 20px;
+}
+
+.card-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+}
+
+.card-toggle {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  margin-left: 12px;
+}
+
+.card.expanded .card-toggle { transform: rotate(180deg); }
+
+.card-body {
+  display: none;
+  padding: 0 24px 24px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.card.expanded .card-body { display: block; }
+
+.card-body h1 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text);
+  margin: 4px 0 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.card-body h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--text);
+  margin: 24px 0 12px;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.card-body h3 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 20px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.card-body p { margin-bottom: 12px; color: var(--text-secondary); }
+
+.card-body strong { color: var(--text); font-weight: 600; }
+
+.card-body em { color: var(--text-muted); font-style: italic; }
+
+.card-body ul, .card-body ol {
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.card-body li {
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+}
+
+.card-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 20px 0;
+}
+
+/* ====== STAR LABELS ====== */
+.star-label {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.star-situation { background: var(--stone-100); color: var(--stone-700); }
+.star-task { background: var(--stone-100); color: var(--stone-700); }
+.star-action { background: var(--accent-light); color: #92400E; }
+.star-result { background: var(--emerald-light); color: #065F46; }
+
+.dark-mode .star-action { color: var(--accent); }
+.dark-mode .star-result { color: var(--emerald); }
+
+/* ====== CALLOUT BOXES ====== */
+.callout {
+  padding: 14px 16px;
+  border-radius: 6px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.7;
+  border-left: 3px solid;
+}
+
+.callout-entain {
+  border-left-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.callout-insight {
+  border-left-color: var(--orange);
+  background: var(--orange-light);
+}
+
+.callout-tip {
+  border-left-color: var(--orange);
+  background: var(--orange-light);
+}
+
+.callout-usethis {
+  border-left-color: var(--emerald);
+  background: var(--emerald-light);
+  position: relative;
+}
+
+.badge-usethis {
+  display: inline-block;
+  background: var(--emerald);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* ====== TABLES ====== */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 13px;
+}
+
+.styled-table th {
+  background: var(--stone-100);
+  color: var(--stone-700);
+  font-weight: 600;
+  text-align: left;
+  padding: 8px 14px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+
+.styled-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.styled-table tr:nth-child(even) td {
+  background: var(--stone-50);
+}
+
+.styled-table tr:hover td {
+  background: var(--hover-bg);
+}
+
+/* ====== PREDICTED QUESTIONS ====== */
+.predicted-question {
+  font-style: italic;
+  color: var(--text-muted);
+  padding: 8px 0 8px 16px;
+  border-left: 2px solid var(--stone-200);
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+/* ====== HIGHLIGHTED PHRASES ====== */
+.highlight-phrase {
+  background: var(--accent-light);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+/* ====== TIMER ====== */
+.timer-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(217,119,6,0.3);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.timer-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217,119,6,0.4);
+}
+
+.timer-panel {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  width: 240px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 200;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  display: none;
+}
+
+.timer-panel.visible { display: block; }
+
+.timer-panel-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.timer-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--emerald);
+  margin: 8px 0 16px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.timer-display.warning { color: var(--accent); }
+.timer-display.critical { color: var(--red); }
+
+.timer-presets {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.timer-presets button {
+  flex: 1;
+  padding: 5px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--bg);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.timer-presets button:hover { border-color: var(--accent); color: var(--accent); }
+.timer-presets button.active {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.timer-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.timer-controls button {
+  flex: 1;
+  padding: 7px;
+  font-size: 12px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.12s;
+}
+
+.timer-controls button:hover { opacity: 0.9; }
+
+.btn-start { background: var(--emerald); color: #fff; }
+.btn-pause { background: var(--accent); color: #fff; }
+.btn-reset { background: var(--stone-100); color: var(--text-secondary); }
+
+/* ====== THEME TOGGLE ====== */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  transition: all 0.15s;
+}
+
+.theme-toggle:hover {
+  background: var(--hover-bg);
+  color: var(--text);
+}
+
+/* ====== HAMBURGER ====== */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.hamburger:hover {
+  background: var(--hover-bg);
+  color: var(--text);
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(28,25,23,0.3);
+  z-index: 99;
+  backdrop-filter: blur(2px);
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  text-align: center;
+  padding: 48px 20px 24px;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1100px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-overlay.open { display: block; }
+  .hamburger { display: flex; }
+  .main { margin-left: 0; padding: 56px 24px 80px; }
+}
+
+@media (max-width: 640px) {
+  .main { padding: 56px 14px 80px; }
+  .page-title { font-size: 26px; }
+  .card-title { font-size: 15px; }
+  .card-body { padding: 0 16px 20px; }
+  .card-body h1 { font-size: 20px; }
+  .card-body h2 { font-size: 17px; }
+  .timer-panel { right: 12px; left: 12px; width: auto; bottom: 76px; }
+  .timer-fab { bottom: 16px; right: 16px; width: 44px; height: 44px; font-size: 18px; }
+}
+
+/* ====== PRINT ====== */
+@media print {
+  .sidebar, .hamburger, .theme-toggle, .timer-fab, .timer-panel, .sidebar-overlay { display: none !important; }
+  .main { margin-left: 0; padding: 0; max-width: 100%; }
+  .card { break-inside: avoid; border: 1px solid #D6D3D1; margin-bottom: 16px; box-shadow: none; }
+  .card-body { display: block !important; }
+  .card-toggle { display: none; }
+  body { background: #fff; color: #1C1917; }
+  .card { background: #fff; }
+  .card-body h1, .card-body h2, .card-title, .card-body strong { color: #1C1917; }
+  .callout-entain { border-left-color: #D97706; background: #FFFBEB; }
+  .callout-insight, .callout-tip { border-left-color: #EA580C; background: #FFF7ED; }
+  .callout-usethis { border-left-color: #059669; background: #ECFDF5; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hamburger -->
+<button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">&#9776;</button>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- Theme toggle -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">&#9790;</button>
+
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h2>Entain Interview Prep</h2>
+    <p>Strategy Manager, Performance Marketing</p>
+  </div>
+
+  <div class="sidebar-progress">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text" id="progressText">0/40 studied</div>
+  </div>
+
+  <div class="sidebar-search">
+    <input type="text" id="searchBox" placeholder="Search cards..." oninput="filterCards()">
+  </div>
+
+  <div class="sidebar-actions">
+    <button onclick="expandAll()">Expand All</button>
+    <button onclick="collapseAll()">Collapse All</button>
+    <button onclick="window.print()">Print</button>
+  </div>
+
+  <div class="nav-scroll" id="navGroups"></div>
+</nav>
+
+<!-- Main Content -->
+<div class="main">
+  <div class="content-area">
+    <div class="page-header">
+      <h1 class="page-title">Interview Prep Deck</h1>
+      <p class="page-subtitle">Entain plc — Strategy Manager, Performance Marketing — Stage 1: Monday 31 March 2026, 3:00 PM</p>
+    </div>
+    <div id="cardsContainer"></div>
+    <div class="footer">
+      Private Interview Preparation — Jean Mundabi Fala<br>
+      Entain plc — Strategy Manager, Performance Marketing
+    </div>
+  </div>
+</div>
+
+<!-- Timer -->
+<button class="timer-fab" onclick="toggleTimer()" aria-label="Practice Timer">&#9201;</button>
+<div class="timer-panel" id="timerPanel">
+  <div class="timer-panel-title">Practice Timer</div>
+  <div class="timer-display" id="timerDisplay">1:30</div>
+  <div class="timer-presets" id="timerPresets">
+    <button onclick="setTimer(60)">60s</button>
+    <button onclick="setTimer(90)" class="active">90s</button>
+    <button onclick="setTimer(120)">2m</button>
+    <button onclick="setTimer(180)">3m</button>
+  </div>
+  <div class="timer-controls">
+    <button class="btn-start" id="btnStart" onclick="startTimer()">Start</button>
+    <button class="btn-pause" id="btnPause" onclick="pauseTimer()" style="display:none">Pause</button>
+    <button class="btn-reset" onclick="resetTimer()">Reset</button>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// DATA — all 40 cards
+// ============================================================
+const NAV_GROUPS = [
+  { name: "Quick Reference", cards: [1,2] },
+  { name: "Scripted Openers", cards: [3,4,5] },
+  { name: "Strategic Thinking", cards: [6,7,8] },
+  { name: "Cross Functional Leadership", cards: [9,10,11] },
+  { name: "Budget Strategy", cards: [12,13,14] },
+  { name: "Building Playbooks", cards: [15,16,17] },
+  { name: "AI Use Cases", cards: [18,19,20] },
+  { name: "Stakeholder Management", cards: [21,22,23] },
+  { name: "Pre-Interview Analysis", cards: [24,25] },
+  { name: "Company Intel & Plans", cards: [26,27,28] },
+  { name: "Questions Bank", cards: [29,30] },
+  { name: "Traps & Psychology", cards: [31,32] },
+  { name: "The Pitch", cards: [33] },
+  { name: "Mock Pushbacks", cards: [34,35] },
+  { name: "Stress Tests", cards: [36,37,38,39] },
+  { name: "Task Presentation", cards: [40] }
+];
+
+const CARD_TYPES = {
+  1:'slate',2:'slate',3:'blue',4:'blue',5:'blue',
+  6:'slate',7:'blue',8:'emerald',
+  9:'slate',10:'blue',11:'emerald',
+  12:'slate',13:'blue',14:'emerald',
+  15:'slate',16:'blue',17:'emerald',
+  18:'slate',19:'blue',20:'emerald',
+  21:'slate',22:'blue',23:'emerald',
+  24:'amber',25:'amber',
+  26:'blue',27:'blue',28:'blue',
+  29:'slate',30:'amber',
+  31:'amber',32:'amber',
+  33:'blue',
+  34:'amber',35:'red',
+  36:'red',37:'red',38:'red',39:'red',
+  40:'slate'
+};
+
+const CARD_TITLES = {
+  1:"Interview Cheat Sheet",
+  2:"How to Use This Deck",
+  3:"Tell Me About Yourself",
+  4:"Why Entain?",
+  5:"Why This Role?",
+  6:"COMPETENCY 1 — Strategic Thinking",
+  7:"STAR: Strategic Thinking (Primary)",
+  8:"STAR: Strategic Thinking (Backup)",
+  9:"COMPETENCY 2 — Cross Functional Leadership",
+  10:"STAR: Cross Functional Leadership (Primary)",
+  11:"STAR: Cross Functional Leadership (Backup)",
+  12:"COMPETENCY 3 — Budget Strategy",
+  13:"STAR: Budget Strategy (Primary)",
+  14:"STAR: Budget Strategy (Backup)",
+  15:"COMPETENCY 4 — Building Playbooks",
+  16:"STAR: Building Playbooks (Primary)",
+  17:"STAR: Building Playbooks (Backup)",
+  18:"COMPETENCY 5 — AI Use Cases",
+  19:"STAR: AI Use Cases (Primary)",
+  20:"STAR: AI Use Cases (Backup)",
+  21:"COMPETENCY 6 — Stakeholder Management",
+  22:"STAR: Stakeholder Management (Primary)",
+  23:"STAR: Stakeholder Management (Backup)",
+  24:"Pre-Interview Analysis",
+  25:"What I Would Fix First",
+  26:"The Strategic Insight — Hidden Advantage",
+  27:"Your 90 Day Plan",
+  28:"Your 12 Month Roadmap",
+  29:"Questions to Ask Them",
+  30:"Questions They Will Ask YOU",
+  31:"Common Traps to Avoid",
+  32:"What the Interviewer Wants",
+  33:"The Final 60 Second Pitch",
+  34:"Mock Pushback: Strategic Thinking",
+  35:"Mock: The Failure Question",
+  36:"Stress Test: Not Ex Consulting",
+  37:"Stress Test: Gambling Knowledge",
+  38:"Stress Test: Commitment Question",
+  39:"Stress Test: Why Leaving BT?",
+  40:"Task Presentation — How to Win It"
+};
+
+// Full card HTML content
+const CARD_CONTENT = {};
+
+CARD_CONTENT[1] = `
+<h1>Your Interview Cheat Sheet</h1>
+<p><strong>Role:</strong> Strategy Manager, Performance Marketing<br>
+<strong>Department:</strong> Performance Marketing (reports to Head of Marketing Effectiveness)<br>
+<strong>Company:</strong> Entain plc (FTSE 100, &pound;5.3B revenue, Ladbrokes/Coral/bwin/BetMGM)<br>
+<strong>Location:</strong> London (hybrid, 2 days in office)<br>
+<strong>Salary:</strong> Competitive + bonus + private medical + 6% pension match + share save</p>
+
+<p><strong>Hiring manager:</strong> Mayank Gupta &mdash; Head of Marketing Effectiveness. Cambridge. Ex EY Parthenon and Monitor Deloitte. Strategy and consulting background. Joined Entain 2022.<br>
+<strong>CMO:</strong> Charlotte Emery &mdash; appointed June 2024. Ex William Hill Chief Brand Officer. Focus on marketing execution and effectiveness.<br>
+<strong>CEO:</strong> Stella David &mdash; permanent since April 2025. Ex Bacardi Global CMO. Cambridge engineering.</p>
+
+<p><strong>MONDAY 31 MARCH IS STAGE 1 &mdash; INFORMAL SCREENING CALL</strong><br>
+&ldquo;Not a formal interview. An opportunity to get to know what you are looking for and if this role can meet your expectations.&rdquo;</p>
+
+<p><strong>What this actually means:</strong> They are assessing motivation, fit, and whether you understand the role. Not grilling you on competencies. Be conversational, not rehearsed. But be sharp.</p>
+
+<p><strong>What to focus on Monday:</strong></p>
+<ol>
+<li>Card 3 &mdash; &ldquo;Tell Me About Yourself&rdquo; (keep it to 90 seconds, not 2 minutes. Lighter tone.)</li>
+<li>Card 4 &mdash; &ldquo;Why Entain?&rdquo; (drop 1 to 2 specific insights, not all three)</li>
+<li>Card 5 &mdash; &ldquo;Why This Role?&rdquo; (show you understand the strategy + operations combination)</li>
+<li>Card 24 &mdash; Drop 1 audit finding casually: &ldquo;I noticed the 40% duty rate changes everything about marketing efficiency...&rdquo;</li>
+<li>Card 29 &mdash; Questions to ask THEM (this is your chance to learn about the role)</li>
+<li>Card 33 &mdash; Closing pitch (only if they ask &ldquo;anything else?&rdquo;)</li>
+</ol>
+
+<p><strong>What NOT to do Monday:</strong></p>
+<ul>
+<li>Do not dump STAR answers. They are not asking for them yet.</li>
+<li>Do not lecture them about their business. Drop one insight, not five.</li>
+<li>Do not sound over prepared. They said &ldquo;nothing to prepare.&rdquo; Your edge is that you prepared anyway but it sounds natural.</li>
+</ul>
+
+<p><strong>The real interview (Stages 2 and 3) comes later.</strong> That is when you deploy the full STAR bank, mock pushbacks, and the task presentation. The full deck is ready for when you need it.</p>
+
+<p><strong>Interview process (Glassdoor, 214 reviews):</strong></p>
+<ol>
+<li><strong>Stage 1 (MONDAY): Informal screening call</strong> &mdash; motivation, fit, expectations</li>
+<li>Stage 2: In person interview &mdash; competency and fit</li>
+<li>Stage 3: Task/presentation to two senior managers</li>
+</ol>
+
+<div class="callout callout-tip"><strong>The task stage is a real filter.</strong> One candidate was rejected on &ldquo;quality and detail&rdquo; of the submitted assignment. Treat it as a serious deliverable when you get there.</div>
+
+<p><strong>Your killer themes across every answer:</strong><br>
+Built operating models and governance frameworks from scratch. Twice. &pound;30M to &pound;40M budget scale. Cross functional leadership across Marketing, Finance, Commercial. The person who builds the playbooks and processes that a marketing team runs on &mdash; not just the dashboards.</p>
+
+<div class="callout callout-tip"><strong>The critical context:</strong> UK gambling tax doubles from 21% to 40% in April 2026. Entain estimates &pound;200M impact. &pound;50M coming out of marketing budgets. This role exists to make every pound of marketing spend work harder.</div>
+`;
+
+CARD_CONTENT[2] = `
+<h1>How to Use This Deck</h1>
+
+<p><strong>For each competency, you have:</strong></p>
+<ol>
+<li><strong>What they are really asking</strong> &mdash; the intent behind the question</li>
+<li><strong>2 to 3 predicted questions</strong> &mdash; the most likely phrasing</li>
+<li><strong>STAR answers ready to go</strong> &mdash; using your real experience, no fabrication</li>
+<li><strong>Entain hook</strong> &mdash; how to connect the answer back to this specific role</li>
+</ol>
+
+<div class="callout callout-insight"><strong>The Mayank factor:</strong><br>
+Your hiring manager is ex EY Parthenon and Monitor Deloitte. He thinks in frameworks, structured problem solving, and hypothesis driven analysis. Your answers need to sound structured. Use numbering. &ldquo;Three things...&rdquo; &ldquo;First... Second... Third...&rdquo; He will notice.</div>
+
+<p><strong>Study strategy:</strong><br>
+Read through once. Pick your strongest STAR for each competency. Practice saying them out loud. Each answer should be 2 to 3 minutes maximum. Time yourself.</p>
+
+<div class="callout callout-tip">
+<strong>Golden rules:</strong>
+<ol>
+<li>Every answer ends with a number. Not &ldquo;it improved.&rdquo; A number.</li>
+<li>Every answer connects back to Entain. Not generic. Specific.</li>
+<li>Frame everything through the tax lens. Every marketing pound now costs more. Efficiency is survival.</li>
+<li>Show you understand regulated industries. Gambling compliance is not optional.</li>
+</ol>
+</div>
+`;
+
+CARD_CONTENT[3] = `
+<h1>&ldquo;Tell Me About Yourself&rdquo; &mdash; Your 2 Minute Opener</h1>
+<h2>Practice This Until It Sounds Like a Conversation, Not a Script</h2>
+
+<p>&ldquo;My career has been about building the operating systems that make marketing teams work better. Not running campaigns. Building the frameworks, playbooks, and governance processes that help teams decide where to put money and how to know if it worked.</p>
+
+<p>I started in campaign analytics. New Day, Next, Open University, Travis Perkins. That gave me the data foundation. SQL, SAS, segmentation, predictive modelling.</p>
+
+<p>Then Santander, where I became Marketing Effectiveness Manager. I led a team of 4 across six product lines with a &pound;30M to &pound;40M budget. The job was not just measurement. It was building the governance process that connected econometric outputs to actual budget decisions. I created the campaign business case template that every product team had to use. I built the in flight measurement system that caught underperformance before the money was spent. &pound;260K in annual CAC savings. &pound;30M Private Banking pipeline from a hyper targeted LinkedIn campaign. 20% conversion improvement on the Ant and Dec repositioning.</p>
+
+<p>For the last three and a half years, BT/EE. I built the operating model for SMB marketing from scratch. A single source of truth that three functions use. A permanent cross functional tiger team. A quarterly budget review process that replaced annual allocation with continuous reallocation. 15% revenue growth. 25% lead improvement.</p>
+
+<p>What connects all of this is the same thing this role needs: someone who builds the strategic infrastructure that a marketing team runs on. Playbooks. Operating rhythms. Budget frameworks. Decision processes. At Entain, that is across 30 markets with the 40% duty rate compressing every margin. The complexity is higher. The stakes are sharper. That is exactly why I want this role.&rdquo;</p>
+
+<div class="callout callout-tip"><strong>Timing: 1 minute 45 seconds to 2 minutes. Practice with a stopwatch.</strong></div>
+`;
+
+CARD_CONTENT[4] = `
+<h1>&ldquo;Why Entain?&rdquo; &mdash; Your Answer</h1>
+<h2>Not &ldquo;It Is a Great Company.&rdquo; Specific Reasons That Show You Have Done Your Research.</h2>
+
+<p>&ldquo;Three reasons, and they are specific to this moment.</p>
+
+<p><strong>First, the timing is uniquely interesting.</strong><br>
+The 40% remote gaming duty changes the economics of every marketing pound Entain spends in the UK. You scrapped the Coral Cheltenham sponsorship after 52 years because of it. Paddy Power is already cutting marketing headcount. This is not a normal strategy role. This is a role where the strategy actually matters because there is no room for waste. I find that more interesting than optimising a budget that grows 10% every year regardless.</p>
+
+<p><strong>Second, Entain has structural advantages that make the strategy problem solvable.</strong><br>
+4,000 retail shops functioning as customer acquisition touchpoints. ARC technology with 80% accuracy in identifying at risk players. The Ennovate platform powering 70% of brands. The UK is outgrowing Flutter at 9% versus their 1%. The pieces are there. What needs building is the strategic framework that connects budget allocation across paid search, affiliates, CRM, and retail conversion into one coherent model. That is what I do.</p>
+
+<p><strong>Third, the leadership team gets it.</strong><br>
+Stella David is a CMO turned CEO. Charlotte Emery transformed marketing effectiveness at William Hill before joining. Mayank comes from EY Parthenon. This is a team that thinks in frameworks and measurement, not gut feel and vanity metrics. I want to work with people who expect the same rigour I bring.&rdquo;</p>
+
+<div class="callout callout-usethis"><span class="badge-usethis">USE THIS</span><br>Drop the Cheltenham stat and the Flutter comparison. No other candidate will have these.</div>
+`;
+
+CARD_CONTENT[5] = `
+<h1>&ldquo;Why This Role?&rdquo; &mdash; Your Answer</h1>
+<h2>Show Them This Is Not a Random Application.</h2>
+
+<p>&ldquo;Because this role sits at the intersection of strategy and operations in a way that most marketing roles do not.</p>
+
+<p>Most strategy roles are disconnected from execution. Most operational roles do not have strategic scope. This one does both. You are building playbooks AND shaping budget allocation. You are facilitating planning workshops AND building financial models. You are working across 30 markets AND going deep on individual channel economics. That combination is rare.</p>
+
+<p>My career has been exactly this combination. At Santander, I was the bridge between the econometrics capability and the product teams making budget decisions. At BT, I built the measurement system AND ran the weekly trading sessions where the numbers turned into actions. Not one or the other. Both.</p>
+
+<p>The AI angle is what makes it future facing. I have built an AI powered go to market system from scratch for my consultancy. I know what AI can actually do for marketing operations &mdash; automate reporting, personalise at scale, accelerate creative testing &mdash; and I know where it falls flat. That practical experience is different from theoretical interest.</p>
+
+<p>And the scale is right. A triple digit million pound budget across 30 markets is the kind of complexity where structured thinking matters most. You cannot optimise that with spreadsheets. You need frameworks, playbooks, and operating models. That is what I build.&rdquo;</p>
+`;
+
+CARD_CONTENT[6] = `
+<h1>Strategic Thinking &mdash; Turning Ambiguity Into Structure</h1>
+
+<p><strong>What they are really asking:</strong><br>
+&ldquo;Can this person take a messy, undefined problem and turn it into a clear plan with actionable recommendations? Do they think in frameworks? Can they structure a problem the way a consultant would?&rdquo;</p>
+
+<p><strong>Why Mayank cares about this:</strong><br>
+He is ex EY Parthenon and Monitor Deloitte. He was hired to bring consulting rigour to Entain's marketing function. He needs someone who speaks the same language: hypothesis driven, structured, output focused.</p>
+
+<p><strong>Predicted questions:</strong></p>
+<div class="predicted-question">&ldquo;Tell me about a time you took an ambiguous problem and turned it into a clear strategy.&rdquo;</div>
+<div class="predicted-question">&ldquo;How do you approach structuring a new project when there is no playbook?&rdquo;</div>
+<div class="predicted-question">&ldquo;Describe a situation where you had to develop a strategic recommendation with incomplete data.&rdquo;</div>
+`;
+
+CARD_CONTENT[7] = `
+<h1>STAR: Strategic Thinking &mdash; Primary Answer</h1>
+<h2>Designing the Measurement Architecture at BT/EE</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>When I took the SMB Performance and Effectiveness role at BT, there was no measurement strategy. There were reports. Lots of reports. But no architecture connecting them. The weekly trading session had no framework for deciding which metrics mattered. Campaign performance was measured in isolation. Channel ROI was debated but never agreed. Brand impact was not measured at all for SMB.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Build a measurement strategy that connected campaign performance, channel ROI, and business outcomes into one coherent system. Not just a dashboard. A way of thinking about marketing investment.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I started with the business question: &ldquo;What decisions does SMB marketing need to make, and what data would change those decisions?&rdquo; I mapped the decision points: annual budget allocation, quarterly reallocation, weekly campaign optimisation, and monthly performance versus plan. Then I designed the measurement stack backwards from those decisions.</p>
+
+<p>For annual allocation: econometric modelling of channel contribution.<br>
+For quarterly reallocation: the single source of truth dashboard with live performance data.<br>
+For weekly optimisation: campaign level reporting with a traffic light system.<br>
+For monthly reviews: volume and value outlooks connecting marketing activity to commercial pipeline.</p>
+
+<p>I documented this as a one page measurement framework. Presented it to the Marketing Director. Got it embedded into the team's operating rhythm.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>Three years later, the framework is still the operating model. Every new campaign gets planned against it. Every budget conversation references it. 15% revenue growth and 25% lead acquisition improvement are downstream results of having a measurement strategy, not just measurement reports.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;Entain operates across 30 markets with different regulations, different competitive dynamics, and different channel mixes. The Strategy Manager needs to build the operating model that lets each market optimise locally while rolling up into one global budget view. I have built that kind of structured framework before &mdash; not as a measurement system, but as an operating system that a marketing team runs on. Map the decisions. Build the cadence. Embed it into how people work.&rdquo;</div>
+`;
+
+CARD_CONTENT[8] = `
+<h1>STAR: Strategic Thinking &mdash; Backup Answer</h1>
+<h2>Building the Governance Framework at Santander</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>At Santander, the marketing effectiveness function existed but there was no structured process for how econometric insights translated into budget decisions. Product teams would come requesting campaign spend. Some got budget based on who made the strongest case. Others got it based on precedent. The econometrics capability was there but it was not connected to the decision making process.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Build a governance framework that made budget allocation evidence based. Not to slow things down. To make sure every pound had an expected return and a method to prove it worked.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I created a campaign business case template that every product team had to complete before budget was released. It included: target audience, expected reach, projected ROI, measurement methodology, and risk flags including regulatory sensitivity. I reviewed each case with my team of 4 specialists before recommending approval to the Marketing Director. For campaigns with FCA sensitivity, I built in mandatory compliance sign off as step one, not an afterthought.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>Budget allocation became evidence based. &pound;260K in annual CAC savings. Not by cutting campaigns. By stopping the ones where the measurement plan could not justify the spend. Product teams initially pushed back. Within 6 months, they started bringing better cases because they knew the bar.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;Post tax, Entain cannot afford to fund campaigns without evidence of expected return. I would build the same governance layer here &mdash; a structured process where every campaign across every market has a business case, a measurement plan, and an expected ROI before budget is released. At Santander, that saved &pound;260K annually on a &pound;30M to &pound;40M budget. At Entain's scale, the savings multiply.&rdquo;</div>
+`;
+
+CARD_CONTENT[9] = `
+<h1>Cross Functional Project Leadership</h1>
+
+<p><strong>What they are really asking:</strong><br>
+&ldquo;Can this person drive complex projects across multiple teams, markets, and stakeholders? Do they get things done in a matrix organisation where they do not have direct authority?&rdquo;</p>
+
+<p><strong>Predicted questions:</strong></p>
+<div class="predicted-question">&ldquo;Tell me about a time you led a project that required collaboration across multiple teams or departments.&rdquo;</div>
+<div class="predicted-question">&ldquo;Describe a situation where you had to get alignment from stakeholders with competing priorities.&rdquo;</div>
+<div class="predicted-question">&ldquo;How do you manage a project when you have influence but not authority?&rdquo;</div>
+`;
+
+CARD_CONTENT[10] = `
+<h1>STAR: Cross Functional Project Leadership &mdash; Primary Answer</h1>
+<h2>The Tiger Team at BT/EE</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>At BT/EE, Marketing, Finance, and Commercial were all reporting different numbers for the same campaigns. Senior leaders were making investment decisions based on whichever spreadsheet arrived first. Weekly trading sessions were 60% debate about data accuracy, 40% actual decisions.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Get three separate functions to agree on one set of numbers and one decision making rhythm. Without having authority over any of them.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I started by sitting with each function separately and mapping their data sources. I found 7 places where definitions diverged. Different attribution windows. Different CPA calculations. Different date cut offs.</p>
+
+<p>I did not mandate change from the top. I built a prototype dashboard with one month of data and showed each team lead what their world would look like if everyone was working from the same page. Marketing could see which channels were driving revenue. Finance could see ROI by campaign. Commercial could see pipeline contribution.</p>
+
+<p>Then I proposed the tiger team: a permanent cross functional group that would meet weekly around this single dashboard. I wrote a formal business case for it and presented it as part of the Q2 budget reallocation proposal.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>The tiger team was approved. It is still running three and a half years later. Weekly trading sessions now start with the same dashboard. 15% SMB revenue growth. 25% lead acquisition improvement. Not because the marketing changed overnight. Because the decisions changed. People could see what was working and move money toward it.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;Entain has the same challenge at bigger scale. Performance marketing, brand, CRM, affiliates, retail &mdash; all need to be working from one budget model. The Strategy Manager role is the person who builds that cross functional alignment. I have done this without having authority. The mechanism is the same: give people a shared view of the truth and a regular cadence to act on it.&rdquo;</div>
+`;
+
+CARD_CONTENT[11] = `
+<h1>STAR: Cross Functional Project Leadership &mdash; Backup Answer</h1>
+<h2>Shifting Santander from Post Campaign to In Flight Measurement</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>At Santander, the marketing effectiveness team was doing post campaign analysis. Campaigns would run for 6 to 8 weeks, then we would measure what happened. The problem: by the time the report landed, the budget was spent and the next campaign was already in market.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Move six product teams from post campaign reporting to in flight measurement. Each team thought their campaigns were unique and resisted standardised processes.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I redesigned the measurement cadence. Weekly performance checkpoints at campaign level. I worked with the media agency to get weekly channel data instead of monthly. I created a traffic light system: green, amber, red. For red campaigns, I built a rapid response process: flag to the product team within 48 hours with a recommended action.</p>
+
+<p>The biggest resistance came from product teams who felt their campaigns were being judged too early. I reframed it: &ldquo;This is not about judging. This is about protecting your budget. If we catch a leak in week 2, you get 6 weeks of spend back to put somewhere that works.&rdquo;</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>The Ant and Dec current account repositioning campaign used this system. We spotted a conversion bottleneck in week 3, adjusted the landing page targeting, and achieved a 20% conversion improvement. Without in flight measurement, that fix would have been a recommendation in a post campaign report &mdash; too late to matter.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;Entain runs campaigns across 30 markets simultaneously. The Strategy Manager needs to build operating playbooks that give every market the ability to spot underperformance early and act fast. The traffic light system I built at Santander is exactly the kind of operational playbook this role calls for &mdash; scalable, repeatable, and actionable without waiting for a quarterly review.&rdquo;</div>
+`;
+
+CARD_CONTENT[12] = `
+<h1>Budget Strategy and Financial Modelling</h1>
+
+<p><strong>What they are really asking:</strong><br>
+&ldquo;Can this person build financial models? Can they evaluate trade offs across channels and markets? Do they think about marketing as an investment with measurable returns, not a cost centre?&rdquo;</p>
+
+<p><strong>Why this matters at Entain right now:</strong><br>
+The 40% tax means the UK marketing budget is losing approximately &pound;50M. Every allocation decision is a trade off. The Strategy Manager needs to build models that show where each pound delivers the best return.</p>
+
+<p><strong>Predicted questions:</strong></p>
+<div class="predicted-question">&ldquo;How would you approach evaluating trade offs and prioritising a triple digit million pound marketing budget?&rdquo;</div>
+<div class="predicted-question">&ldquo;Tell me about a time you built a business case that changed how budget was allocated.&rdquo;</div>
+<div class="predicted-question">&ldquo;How do you think about marketing ROI across different channels with different measurement approaches?&rdquo;</div>
+`;
+
+CARD_CONTENT[13] = `
+<h1>STAR: Budget Strategy &mdash; Primary Answer</h1>
+<h2>The Q2 Budget Reallocation Business Case at BT</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>At BT/EE, the SMB marketing budget was allocated annually and rarely moved during the year. In Q1, I noticed through the new single source of truth dashboard that two channels were dramatically outperforming the others on cost per acquisition, while a third channel was consuming 30% of budget with declining returns.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Build a business case for reallocating budget mid year. Politically difficult because it meant moving money away from a channel that had been funded for years.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I built a formal business case. Not a PowerPoint with opinions. A financial model showing: current CPA by channel, projected CPA if we maintained allocation, projected CPA if we reallocated 20% from the underperforming channel to the two that were working. I included revenue impact, risk analysis (what if the outperforming channels saturate?), and a 90 day test proposal.</p>
+
+<p>I presented it to the Marketing Director first to get alignment, then jointly to Finance and Commercial in the weekly trading session. Having Finance in the room was deliberate. When the marketing team says &ldquo;move money,&rdquo; it sounds like a preference. When Finance sees the same model and agrees, it sounds like a business decision.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>Budget was reallocated. The tiger team was born from this meeting. The channels we shifted budget toward delivered 15% SMB revenue growth that year. More importantly, the process I built &mdash; quarterly budget review based on live performance data &mdash; is now standard practice.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;Post tax, Entain cannot allocate budget annually and hope it lands. It needs a process for continuous reallocation across channels and markets &mdash; evaluate quarterly, reallocate based on evidence, test before committing. I built that process at BT. The difference at Entain is the number of markets and the number of channels competing for a shrinking UK budget. The framework scales. The stakes are just higher.&rdquo;</div>
+`;
+
+CARD_CONTENT[14] = `
+<h1>STAR: Budget Strategy &mdash; Backup Answer</h1>
+<h2>The &pound;30M Private Banking Pipeline at Santander</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>Santander Private Banking wanted to acquire high net worth clients. The previous approach was broad awareness campaigns. Expensive. Slow. Low conversion.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Design a campaign that was commercially targeted, not just creatively interesting. Find the right people. Reach them efficiently. Prove it worked.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I analysed the existing customer data to build a profile of current HNWI clients: income bands, geographic clusters, digital behaviour, product holdings. Then I used this profile to build a hyper targeted LinkedIn campaign. Specific job titles, specific income indicators, specific geographic zones around Santander branches with Private Banking capability.</p>
+
+<p>I built the measurement framework before launch: cost per lead, cost per qualified meeting, cost per new client, and pipeline value attribution. Weekly reporting from day one.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>&pound;30M in pipeline value. 38 new HNWI clients in 30 days. 7x the results of the previous approach. The insight was simple: stop targeting broadly and start targeting commercially.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;Entain's performance marketing runs across paid search, paid social, affiliates, and CRM. Each channel has different economics. The Strategy Manager needs to evaluate which channels deliver the best CAC to LTV ratio per market and shift budget accordingly. The same principle applies: stop targeting broadly, start targeting commercially. Especially post tax.&rdquo;</div>
+`;
+
+CARD_CONTENT[15] = `
+<h1>Building Playbooks and Operating Models</h1>
+
+<p><strong>What they are really asking:</strong><br>
+&ldquo;Can this person codify best practices? Can they build repeatable processes that work across 30 markets? Can they turn what one market does well into something every market can replicate?&rdquo;</p>
+
+<p><strong>This is the consulting DNA of the role.</strong> Mayank wants someone who can document, standardise, and scale.</p>
+
+<p><strong>Predicted questions:</strong></p>
+<div class="predicted-question">&ldquo;Tell me about a time you built a playbook or standardised process that improved how a team operates.&rdquo;</div>
+<div class="predicted-question">&ldquo;How would you approach building best practice documentation for a function that operates across multiple markets?&rdquo;</div>
+<div class="predicted-question">&ldquo;Describe a situation where you improved an organisation's way of working.&rdquo;</div>
+`;
+
+CARD_CONTENT[16] = `
+<h1>STAR: Building Playbooks &mdash; Primary Answer</h1>
+<h2>The Single Source of Truth Operating Model at BT</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>BT's SMB marketing team had no standardised reporting. Each function used different spreadsheets, different definitions, different cadences. New team members spent weeks just figuring out which numbers to trust.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Build a standardised operating model that anyone could follow. Not a one off dashboard. A repeatable system with documented definitions, agreed cadences, and clear ownership.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I built it in layers. First, I documented every data source, every definition, and every calculation in a single reference guide. Attribution windows, CPA calculations, date cut offs &mdash; all written down so there was no ambiguity.</p>
+
+<p>Second, I built the Tableau dashboard with those standardised definitions embedded. The technology enforced the standard. You could not look at the dashboard and get a different number from someone else.</p>
+
+<p>Third, I created the operating rhythm: weekly trading sessions (review performance, make decisions), monthly volume and value outlooks (predict next period), quarterly budget reviews (reallocate based on evidence). Each meeting had a standing agenda, a defined output, and clear decision rights.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>The operating model is still running three and a half years later. New team members can read the reference guide and understand the system in a week. Weekly trading sessions are 90% decisions, 10% data alignment, down from the opposite before.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;This is literally what the JD asks for: &lsquo;build and codify best practice playbooks across key performance marketing channels.&rsquo; The BT operating model is exactly that &mdash; documented definitions, standardised reporting, repeatable cadences, clear decision rights. The difference at Entain is scale: 30 markets instead of one. But the methodology is the same. Build it for one market, test it, codify it, roll it out.&rdquo;</div>
+`;
+
+CARD_CONTENT[17] = `
+<h1>STAR: Building Playbooks &mdash; Backup Answer</h1>
+<h2>The Campaign Business Case Template at Santander</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>At Santander, product teams requested marketing budget through informal conversations. No standardised format. No consistent evaluation criteria. Budget decisions were influenced by who made the loudest case, not the strongest evidence.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Create a standardised process that every product team used, regardless of product line or campaign type.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I designed a campaign business case template. One page. Every campaign had to answer: who is the audience, what is the expected reach, what is the projected ROI, how will we measure it, what are the risk flags (regulatory, brand, data privacy). I also built a scoring rubric so my team of 4 could evaluate cases consistently.</p>
+
+<p>The hardest part was getting six product teams to adopt it. I did not force compliance. I started with one team that was open to it, showed the result (their next campaign had a measurement plan from day one and delivered 20% better than the previous quarter), and used that as the case study to bring the other five teams on board.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>Within 6 months, all six product teams were using the template. Budget allocation became evidence based. &pound;260K annual CAC savings from stopping campaigns that could not justify the spend.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;Entain needs this at multi market scale. The JD mentions &lsquo;campaign setup, optimisation routines, target setting, creative and copy testing principles.&rsquo; That is a playbook library. Each of those needs a standardised template, a scoring rubric, and a rollout plan. I have built and rolled out operational playbooks before. The principle is the same: start with one team, prove it works, scale from there.&rdquo;</div>
+`;
+
+CARD_CONTENT[18] = `
+<h1>AI Use Cases in Performance Marketing</h1>
+
+<p><strong>What they are really asking:</strong><br>
+&ldquo;Does this person understand AI beyond the hype? Can they identify practical use cases that improve productivity, reduce cost, or improve ROI? Do they know the difference between what AI can actually do and what sounds impressive in a strategy deck?&rdquo;</p>
+
+<p><strong>Context:</strong><br>
+Entain is already using AI. Eurobet (their Italian brand) uses Adobe Experience Platform with generative AI for hyper personalised campaigns. ARC technology uses machine learning for player protection. Storyteq automates creative production across 27 markets. They are not starting from zero.</p>
+
+<p><strong>Predicted questions:</strong></p>
+<div class="predicted-question">&ldquo;How would you identify and prioritise AI use cases in performance marketing?&rdquo;</div>
+<div class="predicted-question">&ldquo;Give me an example of how you have used AI or automation to improve marketing operations.&rdquo;</div>
+<div class="predicted-question">&ldquo;What AI use cases do you think would have the highest impact for Entain?&rdquo;</div>
+`;
+
+CARD_CONTENT[19] = `
+<h1>STAR: AI Use Cases &mdash; Primary Answer</h1>
+<h2>Building an AI Powered Go to Market System at MDB Growth Capital</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>When I started MDB Growth Capital, I needed to build a full client acquisition pipeline. Research, lead generation, funnel auditing, personalised outreach, campaign deployment. The traditional approach would require a team of 5 to 6 people. I had myself.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Build a system where AI handled the research, analysis, and content generation so I could focus on strategy and client relationships.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I built a suite of 9 interconnected AI tools. A research engine that builds company intelligence profiles. A funnel audit that diagnoses customer acquisition weaknesses. A lead generator that finds qualified companies with decision maker contacts. A cold email system that generates personalised sequences scored against a database of 1,500 successful campaigns. An HTML builder that creates interactive outreach packages. Each tool is a deterministic script that AI orchestrates but does not improvise &mdash; the outputs are consistent because the execution is coded, not generated on the fly.</p>
+
+<p>The key architectural decision was separating reasoning from execution. AI decides what to do. Coded scripts do it. That keeps accuracy high where compound error would otherwise degrade quality across multiple steps.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>One person operating as a full go to market team. Research that used to take 2 days takes 30 minutes. Personalised outreach packages that used to require a designer, copywriter, and strategist are generated in under an hour. The system has produced packages that secured meetings with FTSE 100 companies.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;For Entain, the highest impact AI use cases in performance marketing are: one, automated reporting across 30 markets &mdash; instead of analysts pulling data, AI aggregates and flags anomalies in real time. Two, creative variant generation &mdash; Storyteq already automates production, but AI can generate and test copy variants at scale. Three, budget optimisation &mdash; train a model on historical campaign data to recommend optimal channel splits before the quarter starts. The principle I learned from building my own system applies: AI works when the execution is deterministic and the reasoning layer orchestrates it. Not when you ask AI to do everything and hope for the best.&rdquo;</div>
+`;
+
+CARD_CONTENT[20] = `
+<h1>STAR: AI Use Cases &mdash; Backup Answer</h1>
+<h2>Automated Performance Dashboard at BT</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>At BT, the weekly performance reports were built manually. Every Monday, someone pulled data from 5 different sources, pasted it into Excel, reformatted it, and emailed a PDF. A full day of analyst time every week. Data was always 3 days old by the time it reached stakeholders.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Automate the reporting so it was live, accurate, and did not require manual assembly.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I designed the data architecture: sources feeding into a central data model, connected to Tableau. I mapped the data flows, negotiated standardised automated exports with agencies, and worked with the data team to get API access to internal systems. The technology was SQL for data joins, Tableau for visualisation, automated refresh schedules to eliminate manual intervention.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>Dashboard went from manual Monday PDF to live Tableau. Updated daily. Saved one full day per week of analyst time. More importantly, decisions moved faster. When a campaign underperformed on Tuesday, the team saw it on Wednesday, not the following Monday. That speed drove the 15% revenue growth and 25% lead improvement.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;Entain already has Storyteq for creative automation and Adobe Experience Platform for personalisation in Eurobet. The question is not whether AI works. It is whether the data infrastructure underneath is reliable enough to trust what the AI recommends. At BT, that foundation did not exist until I built it. At Entain, the Strategy Manager needs to assess what foundation exists across 30 markets before layering intelligence on top. Otherwise you are automating bad data faster.&rdquo;</div>
+`;
+
+CARD_CONTENT[21] = `
+<h1>Stakeholder Management and Influencing Senior Leaders</h1>
+
+<p><strong>What they are really asking:</strong><br>
+&ldquo;Can this person influence C suite and Managing Directors? Can they communicate complex analysis in a way that drives decisions? Do they have executive presence?&rdquo;</p>
+
+<p><strong>The JD says:</strong> &ldquo;High visibility role with direct access to senior leadership (C suite and Managing Directors).&rdquo;</p>
+
+<p><strong>Predicted questions:</strong></p>
+<div class="predicted-question">&ldquo;Tell me about a time you influenced a senior leader to change their approach or decision.&rdquo;</div>
+<div class="predicted-question">&ldquo;How do you communicate complex data to non technical stakeholders?&rdquo;</div>
+<div class="predicted-question">&ldquo;Describe a situation where you had to push back on a senior stakeholder.&rdquo;</div>
+`;
+
+CARD_CONTENT[22] = `
+<h1>STAR: Stakeholder Management &mdash; Primary Answer</h1>
+<h2>Getting Finance to Approve Budget Reallocation at BT</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>At BT, I needed to convince the Marketing Director and Finance to reallocate 20% of the SMB marketing budget mid year. This meant moving money away from a channel that had been funded for years and had internal advocates.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Build the case, get alignment from the Marketing Director first, then present to Finance and Commercial in a way that made reallocation feel like a business decision, not a marketing preference.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I built a financial model, not a PowerPoint. Current CPA by channel. Projected CPA if we maintained allocation. Projected CPA if we reallocated. Revenue impact. Risk analysis. A 90 day test proposal to de risk the decision.</p>
+
+<p>I presented to the Marketing Director first. One to one. Got alignment. Then presented jointly to Finance and Commercial in the weekly trading session. Having Finance in the room was deliberate. When the marketing team says &ldquo;move money,&rdquo; it sounds like a preference. When Finance sees the same model and agrees, it sounds like a business decision.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>Budget was reallocated. The process became standard. The key was speaking Finance's language: ROI, CAC, payback period, risk adjusted returns. Not marketing language: awareness, engagement, brand lift.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;The JD says direct access to C suite and Managing Directors. At Entain, that means presenting to Stella David, Charlotte Emery, and market MDs. The skill is translating channel performance into investment language &mdash; CAC, LTV, payback period, contribution margin &mdash; so the decision feels like a financial one, not a marketing one. That is what I did at BT when I brought Finance into the trading sessions. Same principle. Bigger room.&rdquo;</div>
+`;
+
+CARD_CONTENT[23] = `
+<h1>STAR: Stakeholder Management &mdash; Backup Answer</h1>
+<h2>Challenging a Senior Product Director at Santander</h2>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>A senior product director was pushing for a large campaign budget based on projected ROI figures that my analysis showed were significantly overstated. The projections used best case assumptions on every variable. My models showed a realistic range that was 40% lower.</p>
+
+<p><span class="star-label star-task">TASK</span></p>
+<p>Challenge the numbers honestly without destroying the working relationship. This person was senior to me.</p>
+
+<p><span class="star-label star-action">ACTION</span></p>
+<p>I requested a one to one meeting rather than raising it in the group budget review. I showed the data side by side: their projections and my range analysis. I did not say &ldquo;you are wrong.&rdquo; I said &ldquo;here is a range scenario &mdash; best case matches your numbers, base case shows this, worst case shows this. Which scenario should we plan for?&rdquo; I proposed a compromise: approve 60% of the budget with a gate review at week 4 using in flight data.</p>
+
+<p><span class="star-label star-result">RESULT</span></p>
+<p>The gated approach was approved. At week 4, in flight data showed base case, not best case. The remaining 40% was redirected to a higher performing campaign. The product director later said the gate review approach was something they would use in future.</p>
+
+<div class="callout callout-entain"><strong>Entain hook:</strong> &ldquo;With a triple digit million pound budget, there will always be internal advocates for channels or campaigns that the data does not support. The Strategy Manager needs to be the person who challenges those assumptions with data, not opinions. And does it in a way that builds relationships, not burns them.&rdquo;</div>
+`;
+
+CARD_CONTENT[24] = `
+<h1>Pre Interview Analysis &mdash; What I Noticed</h1>
+<h2>&ldquo;Before the interview, I looked at Entain's performance marketing landscape and a few things stood out...&rdquo;</h2>
+
+<p><strong>1. Paid search appears underweight relative to market position.</strong><br>
+William Hill captures nearly 38% of sports betting PPC clicks. bet365 is at 16%. Entain brands appear to sit below both. That is either a deliberate efficiency play or an acquisition gap worth investigating. The question is whether the 40% tax changes the CAC threshold that makes generic PPC viable.</p>
+
+<p><strong>2. Retail is an undervalued acquisition channel.</strong><br>
+4,000 shops functioning as zero cost customer acquisition points. No pure play competitor has this. Post tax, when every digital acquisition channel gets more expensive, the retail to digital conversion funnel becomes the most efficient path to new customers. The question is whether Entain models the true value of retail as an acquisition channel in its marketing mix.</p>
+
+<p><strong>3. The affiliate terms are tightening at the wrong time.</strong><br>
+Extending negative carryover across all markets and brands shifts risk onto affiliates. With 74% of operators relying on affiliates as their primary channel, the risk is pushing top performers to competitors with friendlier economics. Post tax, this needs careful monitoring.</p>
+
+<p><strong>4. CRM is getting harder and more valuable simultaneously.</strong><br>
+Granular opt in fragments the marketable database. Mixed product bans limit cross sell. But reactivating a lapsed customer costs a fraction of acquiring a new one. The operators who build the best segmentation and personalisation win the CRM game.</p>
+
+<p><strong>5. Compliance is a competitive advantage, not a cost.</strong><br>
+The Ladbucks ASA ban was avoidable with a tighter creative compliance loop. UKGC compliance actions are up 131%. The operators who stay ahead of regulation face fewer restrictions and lower enforcement risk. ARC technology with 80% accuracy in identifying at risk players is already a genuine moat.</p>
+
+<div class="callout callout-tip"><strong>Use these selectively.</strong> Drop one or two when relevant. Do not dump all five at once. The goal is to show you have already done the thinking, not to lecture them about their own business.</div>
+`;
+
+CARD_CONTENT[25] = `
+<h1>Top 3 Priorities &mdash; Based on What I Have Seen</h1>
+
+<p><strong>Priority 1: Build a unified channel attribution model.</strong><br>
+Entain runs paid search, affiliates, CRM, retail, paid social, and brand advertising. Each channel is measured differently. Without a single model that compares CAC and LTV across all channels on the same basis, budget allocation is guesswork. Post tax, guesswork is not affordable.</p>
+
+<p><strong>Priority 2: Model the true value of retail as acquisition.</strong><br>
+If a customer walks into a Ladbrokes shop, places a bet, then downloads the app and becomes a digital customer &mdash; how is that attributed? If retail customers have higher LTV because they are multi channel, the 4,000 shops are worth more than the retail P and L shows. That analysis could change how the entire marketing budget is allocated.</p>
+
+<p><strong>Priority 3: Build a market by market performance playbook.</strong><br>
+30 markets with different regulations, different competitive landscapes, and different customer behaviours. The Strategy Manager needs a framework that lets each market optimise locally while rolling up into a global budget model. One playbook. Market specific parameters. Centralised performance tracking.</p>
+
+<div class="callout callout-insight">These feed directly into the 90 day plan. They are not generic. They come from the audit findings.</div>
+`;
+
+CARD_CONTENT[26] = `
+<h1>The Insight That Shows You Have Done Your Research</h1>
+<h2>Post Tax, Retail Is the Competitive Moat. Not Brand. Not Technology. Shops.</h2>
+
+<p>Memorise this. Use it when they ask &ldquo;What do you know about Entain?&rdquo; or &ldquo;What would you focus on?&rdquo;</p>
+
+<p>The 40% remote gaming duty hits every UK operator equally. The one structural difference between Entain and every pure play competitor is 4,000 retail shops.</p>
+
+<table class="styled-table">
+<thead>
+<tr><th>Factor</th><th>Entain</th><th>Flutter</th><th>bet365</th></tr>
+</thead>
+<tbody>
+<tr><td>Retail shops</td><td>4,000+</td><td>Limited (Paddy Power)</td><td>Zero</td></tr>
+<tr><td>Customer acquisition cost from retail</td><td>Effectively &pound;0 per digital convert</td><td>N/A</td><td>N/A</td></tr>
+<tr><td>Multi channel customer LTV</td><td>Higher (retail + digital)</td><td>Lower (digital only)</td><td>Lower (digital only)</td></tr>
+<tr><td>UK NGR growth</td><td>9%</td><td>1%</td><td>Not disclosed</td></tr>
+</tbody>
+</table>
+
+<p><strong>Why this matters for the Strategy Manager role:</strong><br>
+If retail to digital conversion is modelled and optimised, Entain can acquire customers at a fraction of what competitors pay through PPC and affiliates. In a post tax world where every operator is cutting marketing budgets by 20%, the operator with the cheapest acquisition channel wins.</p>
+
+<div class="callout callout-usethis"><span class="badge-usethis">USE THIS</span><br>
+&ldquo;The 40% duty rate is a Darwinian moment for UK gambling marketing. Every operator is cutting. But Entain has something Flutter and bet365 do not: 4,000 shops that are essentially free customer acquisition touchpoints. The Strategy Manager role is partly about making digital marketing work harder. But it is also about modelling and optimising the channel that no competitor can replicate.&rdquo;</div>
+`;
+
+CARD_CONTENT[27] = `
+<h1>If They Ask: &ldquo;What Would Your First 90 Days Look Like?&rdquo;</h1>
+
+<p><strong>Weeks 1 to 4: Listen. Map. Diagnose.</strong><br>
+Meet every channel lead across markets. Understand the current budget allocation model, channel attribution methodology, and operating cadences. Map every data source, tool, and vendor. Get a baseline on CAC by channel and LTV by segment. Identify the three biggest gaps between current state and best practice.</p>
+
+<p>Key question to answer: &ldquo;How does Entain currently decide where to spend the next marginal pound of marketing budget?&rdquo;</p>
+
+<p><strong>Weeks 3 to 6: Build the channel attribution framework.</strong><br>
+Design a model that compares all channels &mdash; paid search, affiliates, CRM, retail conversion, paid social &mdash; on the same basis. CAC, LTV, payback period, contribution margin. Include the retail to digital conversion path as a distinct channel. This framework becomes the foundation for every budget conversation.</p>
+
+<p><strong>Weeks 5 to 8: Build the first playbook.</strong><br>
+Start with whichever channel has the most inconsistency across markets. Probably campaign setup and optimisation routines. Document the best practice from the highest performing market. Standardise it into a playbook with market specific parameters. Test rollout in 2 to 3 markets.</p>
+
+<p><strong>Weeks 8 to 12: Present the 12 month roadmap.</strong><br>
+Full strategic plan covering: playbook library rollout schedule, AI use case prioritisation (automated reporting, creative variant testing, predictive budget allocation), organisational structure recommendations, capability gap analysis, and the unified attribution model rollout.</p>
+
+<div class="callout callout-tip"><strong>Practice saying this in under 90 seconds.</strong> The key is specificity. Not &ldquo;I would listen and learn.&rdquo; But &ldquo;I would map the channel attribution methodology and build a CAC by channel baseline.&rdquo;</div>
+`;
+
+CARD_CONTENT[28] = `
+<h1>If They Ask: &ldquo;What Is Your Long Term Vision?&rdquo;</h1>
+
+<table class="styled-table">
+<thead>
+<tr><th>Quarter</th><th>Focus</th><th>Key Deliverable</th></tr>
+</thead>
+<tbody>
+<tr><td>Q1</td><td>Foundation</td><td>Channel attribution framework live. First playbook (campaign setup) rolled out to 5 markets. Baseline CAC and LTV by channel documented.</td></tr>
+<tr><td>Q2</td><td>Scale</td><td>Playbook library expanded to 4 playbooks (setup, optimisation, target setting, creative testing). AI automated reporting pilot in 3 markets. Retail to digital conversion model built.</td></tr>
+<tr><td>Q3</td><td>Optimise</td><td>Full budget reallocation model operational. AI creative variant testing in production. Organisational structure recommendations implemented.</td></tr>
+<tr><td>Q4</td><td>Embed</td><td>All playbooks embedded across 30 markets. Annual planning built on the attribution framework. AI use cases generating measurable ROI.</td></tr>
+</tbody>
+</table>
+
+<p><strong>The ambition:</strong><br>
+Make Entain the operator that knows exactly what every pound of marketing spend delivers, across every channel, in every market. Post tax, that is not a nice to have. That is the difference between growing and cutting.</p>
+`;
+
+CARD_CONTENT[29] = `
+<h1>Questions You Should Ask</h1>
+
+<p><strong>About the role:</strong></p>
+<p>&ldquo;How does the Performance Marketing team currently decide where to allocate budget across channels and markets? Is there a unified model or is it decentralised?&rdquo;</p>
+<p>&ldquo;What does the playbook landscape look like today? Are there existing frameworks I would be building on or is this a build from scratch situation?&rdquo;</p>
+<p>&ldquo;The JD mentions AI use cases. Where is Entain on the AI maturity curve in marketing? I know Eurobet is using Adobe Experience Platform with generative AI for personalisation &mdash; is that approach being rolled out to UK brands?&rdquo;</p>
+
+<p><strong>About the tax impact:</strong></p>
+<p>&ldquo;The 40% duty rate changes the economics of every channel. Has the team already modelled the impact on channel level CAC thresholds, or is that part of what this role would build?&rdquo;</p>
+
+<p><strong>About stakeholders:</strong></p>
+<p>&ldquo;The JD mentions direct access to C suite and Managing Directors. What does that look like in practice? Regular steering committees, ad hoc briefings, or something else?&rdquo;</p>
+
+<p><strong>About the team:</strong></p>
+<p>&ldquo;What does the current Marketing Effectiveness team look like? How many people and what capabilities?&rdquo;</p>
+
+<p><strong>The closer:</strong></p>
+<p>&ldquo;What is the one thing that, if this role solved it in the first 6 months, would make the biggest difference to the team?&rdquo;</p>
+`;
+
+CARD_CONTENT[30] = `
+<h1>Predicted Questions Based on CV Gaps and JD Fit</h1>
+
+<p><strong>1. &ldquo;You are not ex consulting. This role asks for management consulting experience. Why should we consider you?&rdquo;</strong></p>
+<p>&ldquo;Because you do not need another consultant. You need a practitioner who thinks like one. I build frameworks, business cases, and operating models. I present to senior leadership. I structure ambiguous problems into clear plans. The difference is I have also built and run the systems that consultants recommend. I can design the playbook AND tell you whether it will actually work in practice. Most consultants cannot do that.&rdquo;</p>
+
+<p><strong>2. &ldquo;Your experience is B2B (BT SMB) and financial services. This is B2C gambling. How does that translate?&rdquo;</strong></p>
+<p>&ldquo;The methodology is the same. Budget allocation, channel optimisation, stakeholder alignment, measurement frameworks &mdash; these are industry agnostic. What changes is the context: customer behaviour, regulatory environment, competitive dynamics. I learned Santander's FCA regulated environment in weeks. I would learn Entain's UKGC environment the same way. And the financial services experience is directly relevant: regulated industry, compliance oversight, multiple product lines competing for budget. Banking and gambling share more than most people realise.&rdquo;</p>
+
+<p><strong>3. &ldquo;This role requires supporting multiple projects simultaneously. How do you manage that?&rdquo;</strong></p>
+<p>&ldquo;At BT, I ran weekly trading sessions, monthly volume outlooks, quarterly budget reviews, the tiger team, and ad hoc business cases simultaneously. The key is operating rhythm. Each workstream has a defined cadence, a standing agenda, and clear decision outputs. I do not manage by heroic multitasking. I build systems that run on cadence so nothing depends on me being in every room.&rdquo;</p>
+
+<p><strong>4. &ldquo;Tell me about a time you failed.&rdquo;</strong></p>
+<p>See Card 35 (Stress Test &mdash; The Failure Question).</p>
+
+<p><strong>5. &ldquo;What is your understanding of performance marketing in iGaming?&rdquo;</strong></p>
+<p>See Card 24 (Pre Interview Analysis). Drop 2 to 3 of the findings naturally.</p>
+`;
+
+CARD_CONTENT[31] = `
+<h1>Watch Out For These</h1>
+
+<p><strong>Trap 1: Talking about MDB Growth Capital too much.</strong><br>
+You have a side business. That is fine. But this interview is about what you bring to Entain. If they ask, keep it brief: &ldquo;I built a consultancy on the side that sharpened my strategic thinking and systems building. But my focus is on bringing that to a full time role where I can operate at scale.&rdquo;</p>
+
+<p><strong>Trap 2: Over claiming on consulting experience.</strong><br>
+The JD says &ldquo;4 to 5 years in management consulting, strategy, or similar.&rdquo; You are the &ldquo;or similar.&rdquo; Do not pretend to be ex McKinsey. Own the practitioner angle: &ldquo;I build frameworks and operating models. I just do it inside the business rather than outside it.&rdquo;</p>
+
+<p><strong>Trap 3: Being too theoretical about gambling.</strong><br>
+You are not a gambling expert. Do not pretend to be. Show you understand the business model, the regulatory landscape, and the marketing challenges. But be honest about what you are learning. &ldquo;I have done deep research on the regulatory environment and competitive dynamics. What I would learn quickly in the role is the customer behavioural nuances &mdash; how a sports bettor differs from a casino player in terms of LTV and acquisition cost.&rdquo;</p>
+
+<p><strong>Trap 4: Ignoring the regulated environment angle.</strong><br>
+Gambling regulation is tightening. Show you understand compliance is not a friction point &mdash; it is a competitive advantage. Reference the Ladbucks ASA ban, the UKGC enforcement escalation, the granular opt in requirement.</p>
+
+<p><strong>Trap 5: Not connecting back to Entain.</strong><br>
+Every STAR answer should end with an Entain hook. &ldquo;And that is exactly what I would do here because...&rdquo;</p>
+`;
+
+CARD_CONTENT[32] = `
+<h1>Put Yourself in Mayank's Shoes</h1>
+<h2>What Would Make Him Say YES After This Interview?</h2>
+
+<p><strong>What he is worried about (his fears):</strong></p>
+
+<table class="styled-table">
+<thead>
+<tr><th>Fear</th><th>How You Address It</th></tr>
+</thead>
+<tbody>
+<tr><td>&ldquo;Can this person think like a consultant?&rdquo;</td><td>Your BT and Santander stories show structured problem solving, framework building, and business casing. Frame every answer in numbered steps.</td></tr>
+<tr><td>&ldquo;Will they get lost in data and never influence decisions?&rdquo;</td><td>The tiger team story is literally about building a system that changed how budget was allocated. You drive decisions, not reports.</td></tr>
+<tr><td>&ldquo;Do they understand gambling?&rdquo;</td><td>Drop the audit findings selectively. Show you have done your homework on the tax impact, regulatory landscape, and competitive dynamics.</td></tr>
+<tr><td>&ldquo;Can they operate across 30 markets?&rdquo;</td><td>Your Santander story covers 6 product teams. Your BT story covers 3 functions. The methodology scales.</td></tr>
+<tr><td>&ldquo;Will they actually build things or just advise?&rdquo;</td><td>Every STAR ends with a tangible output: a dashboard, a framework, a playbook, a team. You build. You do not just recommend.</td></tr>
+</tbody>
+</table>
+
+<p><strong>What would make him excited:</strong><br>
+Someone who has built measurement and effectiveness systems from scratch. Who thinks in frameworks. Who speaks the language of Finance and Commercial, not just Marketing. Who understands the post tax reality. And who has clearly done deep research on Entain.</p>
+`;
+
+CARD_CONTENT[33] = `
+<h1>If They Ask: &ldquo;Why Should We Hire You?&rdquo;</h1>
+<h2>Say This (Practice Until It Is Natural)</h2>
+
+<p>&ldquo;Three reasons.</p>
+
+<p>First, I build the systems this role is asking for. At Santander, I built the governance framework that made a &pound;30M to &pound;40M budget evidence based. At BT, I built the single source of truth, the tiger team, and the operating rhythm that delivered 15% revenue growth. These are not advisory recommendations. They are operational systems that are still running years later.</p>
+
+<p>Second, I think in frameworks and financial models, not opinions. The Q2 budget reallocation at BT was a formal business case with scenario modelling that convinced Finance to reallocate mid year. The Santander playbook was a standardised template that 6 product teams adopted. Mayank comes from consulting. I think the same way. The difference is I also implement.</p>
+
+<p>Third, I understand the moment Entain is in. The 40% duty rate means &pound;50M is coming out of the UK marketing budget. Paddy Power is cutting headcount. Every operator is shrinking. The Strategy Manager role is about building the operating model that makes a smaller budget outperform a larger one &mdash; through better playbooks, better allocation, and better ways of working across 30 markets.</p>
+
+<p>Entain has the structural advantages: 4,000 retail shops, ARC technology, UK growth outpacing Flutter. What it needs is the strategic infrastructure that connects all of that into one coherent system. That is what I have spent my career building. And this is the most interesting version of that problem I have seen.&rdquo;</p>
+
+<div class="callout callout-tip"><strong>Practice this. 50 to 60 seconds. No more.</strong></div>
+`;
+
+CARD_CONTENT[34] = `
+<h1>Mock Pushback: Strategic Thinking</h1>
+
+<p><strong>Your STAR answer ends. The interviewer challenges you.</strong></p>
+
+<hr style="border-color:var(--border);margin:16px 0;">
+
+<p><strong>Mayank:</strong> &ldquo;You built a measurement framework for one SMB team at BT. Entain operates across 30 markets with different products, regulations, and customers. How does your approach scale?&rdquo;</p>
+
+<p><strong>Your recovery:</strong></p>
+
+<p>&ldquo;Fair challenge. The BT framework was for one segment, but the Santander experience covered six product lines &mdash; mortgages, savings, current accounts, private banking, commercial, cycle insurance &mdash; each with their own budget, KPIs, and agency relationships. Each team thought their measurement needs were unique.</p>
+
+<p>The solution was the same at both: build a standardised framework at the top level (shared definitions, shared cadence, shared reporting) while allowing product or market specific metrics underneath. The top layer enables comparison across units. The bottom layer respects local context.</p>
+
+<p>At Entain, the approach would be: one global framework for budget allocation and performance tracking. Market specific parameters underneath (regulatory constraints, channel availability, competitive dynamics). The UK playbook looks different from Brazil or CEE, but the framework for evaluating performance is the same.&rdquo;</p>
+`;
+
+CARD_CONTENT[35] = `
+<h1>Stress Test: &ldquo;Tell Me About a Time You Failed&rdquo;</h1>
+
+<p><span class="star-label star-situation">SITUATION</span></p>
+<p>At Santander, I proposed an in flight measurement cadence to replace post campaign reporting. My initial approach was to mandate weekly reporting from every product team simultaneously. I rolled it out to all six teams at once.</p>
+
+<p><strong>What went wrong:</strong><br>
+Three teams adopted it. Three pushed back hard. They felt their campaigns were being judged too early, and the additional reporting was a burden. Adoption stalled. The Marketing Director asked me to rethink the approach.</p>
+
+<p><strong>What I learned:</strong><br>
+I was right about the solution but wrong about the rollout. I should have started with one team, proved it worked, and used that success to bring the others on board. That is exactly what I did with the second attempt. Started with the Ant and Dec current account campaign. Showed how in flight measurement caught a conversion issue in week 3 and drove 20% improvement. The other five teams asked to join after seeing the result.</p>
+
+<p><strong>The lesson:</strong><br>
+&ldquo;Force fails. Evidence scales. I now always start any operational change with a pilot and a proof point before scaling. The MDB system, the BT tiger team, the Santander governance framework &mdash; all started small and scaled on evidence.&rdquo;</p>
+
+<div class="callout callout-insight">This answer is strong because it shows self awareness, a clear lesson, and that you applied the lesson going forward. Never pick a failure where you were a victim. Pick one where you learned.</div>
+`;
+
+CARD_CONTENT[36] = `
+<h1>Stress Test: &ldquo;You Are Not Ex Consulting&rdquo;</h1>
+
+<p><strong>Mayank:</strong> &ldquo;The JD asks for management consulting or strategy experience. Your background is in house marketing analytics. What makes you think you can do this role?&rdquo;</p>
+
+<p><strong>Your recovery:</strong></p>
+
+<p>&ldquo;You are right that I have not worked at a consultancy. But look at what I have built.</p>
+
+<p>At BT, I took an undefined problem (no measurement strategy, fragmented reporting, no cross functional alignment) and structured it into a clear framework with defined workstreams, measurable outcomes, and a governance model. That is consulting methodology applied inside a business.</p>
+
+<p>At Santander, I built a standardised governance process that six product teams adopted. I presented business cases to senior leadership. I evaluated trade offs across competing budget requests.</p>
+
+<p>The difference between me and an ex consultant is that I have also built and run the systems I designed. I did not hand over a recommendation and leave. I built the dashboard, ran the weekly sessions, and optimised the budget for three and a half years.</p>
+
+<p>For this role, I think that is an advantage. You need someone who can design the playbook AND know whether it will work in practice. Consultants are great at the first part. Practitioners who think like consultants can do both.&rdquo;</p>
+`;
+
+CARD_CONTENT[37] = `
+<h1>Stress Test: &ldquo;What Do You Know About Gambling?&rdquo;</h1>
+
+<p><strong>Mayank:</strong> &ldquo;You have no iGaming experience. This is a specialist industry. How quickly can you get up to speed?&rdquo;</p>
+
+<p><strong>Your recovery:</strong></p>
+
+<p>&ldquo;I have no iGaming operating experience. But I have done deep research, and I would not be here if I thought the gap was too wide to close.</p>
+
+<p>What I understand: the regulatory landscape is tightening. 40% remote gaming duty. UKGC compliance actions up 131%. Granular opt in fragments CRM databases. Premier League shirt sponsorship is being banned. Every marketing channel is getting more constrained.</p>
+
+<p>What I also understand: Entain's structural advantages. 4,000 retail shops as acquisition points. ARC technology as a responsible gambling moat. 9% UK NGR growth outpacing Flutter at 1%. Ennovate platform covering 70% of brands.</p>
+
+<p>What I need to learn: the customer behavioural nuances. How a sports bettor differs from a casino player in acquisition cost and lifetime value. The seasonality cycles around racing festivals and football. The affiliate ecosystem dynamics.</p>
+
+<p>But here is my honest view: the core of this role is not gambling expertise. It is strategic thinking, financial modelling, operating model design, and cross functional project leadership. Those are transferable. The gambling context is learnable. I proved this at Santander &mdash; I had no banking experience when I joined and was running budget governance for a &pound;30M to &pound;40M budget within 6 months.&rdquo;</p>
+`;
+
+CARD_CONTENT[38] = `
+<h1>Stress Test: &ldquo;Are You Going to Leave for Your Side Business?&rdquo;</h1>
+
+<p><strong>Mayank:</strong> &ldquo;I see you run MDB Growth Capital. Are you going to give Entain your full attention?&rdquo;</p>
+
+<p><strong>Your recovery:</strong></p>
+
+<p>&ldquo;Yes. Let me be direct.</p>
+
+<p>MDB is a consultancy I built on the side. It sharpened my strategic thinking, my systems building, and my ability to operate under pressure. But it is not my career. It is a skill sharpener.</p>
+
+<p>I have been at BT for three and a half years. Full time. Full commitment. The single source of truth, the tiger team, the 15% revenue growth &mdash; all of that happened while I was fully committed to BT.</p>
+
+<p>At Entain, this role would get my complete focus. The complexity is what attracts me: 30 markets, a triple digit million pound budget, a major tax change reshaping the economics of every channel. That is not something you do on the side. That is a full time challenge. And that is why I am here.&rdquo;</p>
+`;
+
+CARD_CONTENT[39] = `
+<h1>&ldquo;Why Are You Leaving BT?&rdquo;</h1>
+
+<p><strong>Your answer:</strong></p>
+
+<p>&ldquo;The build is done. The single source of truth is running. The tiger team is embedded. The measurement framework is the standard. Three and a half years later, the system operates without me needing to be in every meeting.</p>
+
+<p>I am a builder. I perform best when there is a system to create, not a system to maintain. Entain has a build opportunity: post tax marketing efficiency, multi market playbooks, AI integration, organisational design. That is a 2 to 3 year build project. And the scale is significantly larger than anything I have done before.&rdquo;</p>
+`;
+
+CARD_CONTENT[40] = `
+<h1>The Task Stage: Your Competitive Advantage</h1>
+
+<p>The Entain interview process likely includes a task or presentation to two senior managers. One candidate was rejected on &ldquo;quality and detail.&rdquo; This is a real filter.</p>
+
+<p><strong>How to approach it:</strong></p>
+
+<ol>
+<li><strong>Treat it like a consulting deliverable.</strong> Structure: situation, analysis, recommendations, implementation roadmap.</li>
+<li><strong>Use their data if they provide it.</strong> But supplement with your own research (you already have the audit).</li>
+<li><strong>Be specific to Entain.</strong> Reference the tax impact, the brand portfolio, the retail advantage, the regulatory landscape. Generic strategy frameworks without Entain context will fail.</li>
+<li><strong>Include a financial model.</strong> Even a simple one showing trade offs by channel. This is what separates strategy people from opinion people.</li>
+<li><strong>End with &ldquo;here is what I would do in the first 90 days.&rdquo;</strong> Connect the presentation to immediate action.</li>
+</ol>
+
+<div class="callout callout-usethis"><span class="badge-usethis">USE THIS</span><br>
+<strong>Your unfair advantage:</strong> You already have the performance marketing audit, the company research, and the 90 day plan. Most candidates will start from scratch. You have a head start.</div>
+`;
+
+
+// ============================================================
+// RENDER
+// ============================================================
+function render() {
+  const container = document.getElementById('cardsContainer');
+  const navContainer = document.getElementById('navGroups');
+  let cardsHTML = '';
+  let navHTML = '';
+
+  NAV_GROUPS.forEach((group, gi) => {
+    navHTML += `<div class="nav-group" data-group="${gi}">`;
+    navHTML += `<div class="nav-group-title" onclick="toggleNavGroup(${gi})"><span>${group.name}</span><span class="chevron">&#9660;</span></div>`;
+    navHTML += `<div class="nav-items">`;
+    group.cards.forEach(num => {
+      const type = CARD_TYPES[num] || 'slate';
+      navHTML += `<div class="nav-item type-${type}" data-card="${num}" onclick="scrollToCard(${num})">`;
+      navHTML += `<div class="nav-checkbox" data-cb="${num}" onclick="event.stopPropagation();toggleCheck(${num})"></div>`;
+      navHTML += `<span class="nav-dot"></span>`;
+      navHTML += `<span class="nav-label">${num}. ${CARD_TITLES[num]}</span>`;
+      navHTML += `</div>`;
+    });
+    navHTML += `</div></div>`;
+  });
+
+  for (let i = 1; i <= 40; i++) {
+    const type = CARD_TYPES[i] || 'slate';
+    const expanded = (i <= 2) ? ' expanded' : '';
+    cardsHTML += `<div class="card type-${type}${expanded}" id="card-${i}" data-card="${i}">`;
+    cardsHTML += `<div class="card-header" onclick="toggleCard(${i})">`;
+    cardsHTML += `<div class="card-header-left"><span class="card-number">${String(i).padStart(2,'0')}</span><span class="card-title">${CARD_TITLES[i]}</span></div>`;
+    cardsHTML += `<span class="card-toggle">&#9660;</span></div>`;
+    cardsHTML += `<div class="card-body">${CARD_CONTENT[i]}</div>`;
+    cardsHTML += `</div>`;
+  }
+
+  container.innerHTML = cardsHTML;
+  navContainer.innerHTML = navHTML;
+  loadProgress();
+}
+
+// ============================================================
+// CARD INTERACTIONS
+// ============================================================
+function toggleCard(num) {
+  const card = document.getElementById('card-' + num);
+  card.classList.toggle('expanded');
+}
+
+function expandAll() {
+  document.querySelectorAll('.card').forEach(c => c.classList.add('expanded'));
+}
+
+function collapseAll() {
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('expanded'));
+}
+
+function scrollToCard(num) {
+  const card = document.getElementById('card-' + num);
+  if (!card.classList.contains('expanded')) card.classList.add('expanded');
+  card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.getElementById('sidebar').classList.remove('open');
+  document.querySelector('.sidebar-overlay').classList.remove('open');
+}
+
+function toggleNavGroup(gi) {
+  const group = document.querySelector(`.nav-group[data-group="${gi}"]`);
+  group.classList.toggle('collapsed');
+}
+
+// ============================================================
+// SEARCH / FILTER
+// ============================================================
+function filterCards() {
+  const q = document.getElementById('searchBox').value.toLowerCase().trim();
+  for (let i = 1; i <= 40; i++) {
+    const card = document.getElementById('card-' + i);
+    const title = CARD_TITLES[i].toLowerCase();
+    const content = CARD_CONTENT[i].toLowerCase();
+    const match = !q || title.includes(q) || content.includes(q);
+    card.style.display = match ? '' : 'none';
+    document.querySelectorAll(`.nav-item[data-card="${i}"]`).forEach(n => {
+      n.style.display = match ? '' : 'none';
+    });
+  }
+}
+
+// ============================================================
+// PROGRESS / CHECKBOXES
+// ============================================================
+let checked = {};
+
+function toggleCheck(num) {
+  checked[num] = !checked[num];
+  updateProgress();
+  saveProgress();
+}
+
+function updateProgress() {
+  const total = 40;
+  const done = Object.values(checked).filter(Boolean).length;
+  const pct = Math.round((done / total) * 100);
+  document.getElementById('progressText').textContent = `${done}/${total} studied`;
+  document.getElementById('progressFill').style.width = pct + '%';
+  for (let i = 1; i <= 40; i++) {
+    const cb = document.querySelector(`.nav-checkbox[data-cb="${i}"]`);
+    if (cb) {
+      if (checked[i]) { cb.classList.add('checked'); cb.innerHTML = '&#10003;'; }
+      else { cb.classList.remove('checked'); cb.innerHTML = ''; }
+    }
+  }
+}
+
+function saveProgress() {
+  localStorage.setItem('entain-prep-checked', JSON.stringify(checked));
+}
+
+function loadProgress() {
+  try {
+    const saved = localStorage.getItem('entain-prep-checked');
+    if (saved) checked = JSON.parse(saved);
+  } catch(e) {}
+  updateProgress();
+}
+
+// ============================================================
+// SCROLL SPY
+// ============================================================
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    let activeNum = 1;
+    for (let i = 1; i <= 40; i++) {
+      const card = document.getElementById('card-' + i);
+      if (card && card.style.display !== 'none') {
+        const rect = card.getBoundingClientRect();
+        if (rect.top <= 120) activeNum = i;
+      }
+    }
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll(`.nav-item[data-card="${activeNum}"]`).forEach(n => n.classList.add('active'));
+  }, 50);
+});
+
+// ============================================================
+// THEME
+// ============================================================
+function toggleTheme() {
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('entain-prep-theme', isDark ? 'dark' : 'light');
+  document.querySelector('.theme-toggle').innerHTML = isDark ? '&#9728;' : '&#9790;';
+}
+
+function loadTheme() {
+  const saved = localStorage.getItem('entain-prep-theme');
+  if (saved === 'dark') {
+    document.body.classList.add('dark-mode');
+    document.querySelector('.theme-toggle').innerHTML = '&#9728;';
+  }
+}
+
+// ============================================================
+// SIDEBAR MOBILE
+// ============================================================
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('open');
+}
+
+// ============================================================
+// TIMER
+// ============================================================
+let timerSeconds = 90;
+let timerRemaining = 90;
+let timerInterval = null;
+let timerRunning = false;
+let audioCtx = null;
+
+function toggleTimer() {
+  document.getElementById('timerPanel').classList.toggle('visible');
+}
+
+function setTimer(s) {
+  timerSeconds = s;
+  timerRemaining = s;
+  timerRunning = false;
+  clearInterval(timerInterval);
+  updateTimerDisplay();
+  document.getElementById('btnStart').style.display = '';
+  document.getElementById('btnPause').style.display = 'none';
+  document.querySelectorAll('.timer-presets button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(timerRemaining / 60);
+  const s = timerRemaining % 60;
+  const display = document.getElementById('timerDisplay');
+  display.textContent = m + ':' + String(s).padStart(2, '0');
+  display.className = 'timer-display';
+  if (timerRemaining <= 10) display.classList.add('critical');
+  else if (timerRemaining <= 30) display.classList.add('warning');
+}
+
+function startTimer() {
+  if (timerRunning) return;
+  timerRunning = true;
+  document.getElementById('btnStart').style.display = 'none';
+  document.getElementById('btnPause').style.display = '';
+  timerInterval = setInterval(() => {
+    timerRemaining--;
+    updateTimerDisplay();
+    if (timerRemaining === 30 || timerRemaining === 10) beep(600, 150);
+    if (timerRemaining <= 0) {
+      clearInterval(timerInterval);
+      timerRunning = false;
+      beep(800, 400);
+      document.getElementById('btnStart').style.display = '';
+      document.getElementById('btnPause').style.display = 'none';
+    }
+  }, 1000);
+}
+
+function pauseTimer() {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  document.getElementById('btnStart').style.display = '';
+  document.getElementById('btnPause').style.display = 'none';
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  timerRemaining = timerSeconds;
+  updateTimerDisplay();
+  document.getElementById('btnStart').style.display = '';
+  document.getElementById('btnPause').style.display = 'none';
+}
+
+function beep(freq, duration) {
+  try {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.frequency.value = freq;
+    gain.gain.value = 0.3;
+    osc.start();
+    osc.stop(audioCtx.currentTime + duration / 1000);
+  } catch(e) {}
+}
+
+// ============================================================
+// INIT
+// ============================================================
+render();
+loadTheme();
+updateTimerDisplay();
+</script>
+</body>
+</html>
